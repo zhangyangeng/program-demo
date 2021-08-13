@@ -1,27 +1,33 @@
-# MyProjectName
+# 项目介绍
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+本项目是根据 **Angular** 官网的**快速上手**进行构建
 
-## Development server
+项目搭建了一个简单的电商购物平台供初学者进行练手使用
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Angular CLI](https://github.com/angular/angular-cli) 版本为 12.2.1
 
-## Code scaffolding
+# 已知问题
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+以下问题在本源码中已经解决，可直接食用
 
-## Build
+## products.ts问题
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+如果你跟着官网的步骤走，你会发现你在 `products.ts` 那里会卡住，这是因为该文件中少了一部分代码，需要导出一个 `Product` 接口
 
-## Running unit tests
+## app.module.ts问题
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+如果你使用官网给的在线IDE进行练习，你会发现生成的组件并没有在该文件中进行引入，需要自己手动引入
 
-## Running end-to-end tests
+## cart.service.ts问题
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+在服务那一部分，官网给出的代码并没有引入 `Product` 需要自己手动引入
 
-## Further help
+# 如何运行
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+将源码克隆到本地
+
+使用 `npm install` 安装本项目的相关依赖
+
+使用 `ng serve` 启动服务，启动成功后可直接输入 `http://localhost:4200/` 进行查看
+
+使用 `ng build` 构建项目，构建好的项目在 `dist` 文件夹下
