@@ -1,0 +1,13 @@
+<h1>Angular 英雄之旅-路由</h1>
+<nav>
+  <a [routerLink]="['/crisis-center']" routerLinkActive="activebutton"  class="button">危机中心</a> | 
+  <a [routerLink]="['/superheroes']" routerLinkActive="activebutton"  class="button">英雄清单</a> | 
+  <a [routerLink]="['/admin']" routerLinkActive="activebutton"  class="button">用户中心</a> | 
+  <a [routerLink]="['/login']" routerLinkActive="activebutton"  class="button">登录</a> | 
+  <a [routerLink]="[{outlets: { popup: ['compose'] }}]" routerLinkActive="activebutton"  class="button">联系中心</a>
+</nav>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+<!-- popup命令的路由出口 -->
+<router-outlet name="popup"></router-outlet>

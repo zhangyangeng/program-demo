@@ -1,0 +1,7 @@
+<h3>用户中心</h3>
+<nav>
+    <a [routerLink]="['./']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}" class="button">仪表盘</a>
+    <a [routerLink]="['./crises']" routerLinkActive="activebutton" class="button">管理危机</a>
+    <a [routerLink]="['./heroes']" routerLinkActive="activebutton" class="button">管理英雄</a>
+</nav>
+<router-outlet></router-outlet>

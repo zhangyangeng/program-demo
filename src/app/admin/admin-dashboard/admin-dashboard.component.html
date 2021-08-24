@@ -1,0 +1,10 @@
+<p>仪表盘：</p>
+
+<p>Session ID: {{sessionId | async}}</p>
+<a id="anchor"></a>
+<p>Tolen: {{ token | async}}</p>
+
+<p>预加载模块：</p>
+<ul>
+    <li *ngFor="let module of modules">{{module}} 模块</li>
+</ul>
