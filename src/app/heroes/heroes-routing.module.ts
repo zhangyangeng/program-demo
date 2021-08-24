@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'superheroes',
     component: HeroesListComponent,
     data: {
-      animation: 'Heroes'
+      animation: 'heroes'
     },
   },
   {
