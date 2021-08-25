@@ -6,6 +6,14 @@
 
 # 分支
 
+## Angular-FormDemo
+
+**Angular** 官方文档的 **开发指南-表单** 中的 [动态表单](https://angular.cn/guide/dynamic-form) 项目完整源码
+
+功能：
+- 动态生成表单组件
+- 验证某字段是否为必填项
+
 ## Angular-RouterDemo-Heroes
 
 **Angular** 官方文档的 **开发指南-路由与导航** 中的 [英雄之旅](https://angular.cn/guide/router-tutorial-toh) 项目完整源码
