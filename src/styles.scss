@@ -1,0 +1,81 @@
+// 定义固定样式
+$font-family-sans-serif: Arial, Helvetica, 'Microsoft YaHei', sans-serif;
+$font-family-serif: Cambria, Georgia, serif;
+// 全局样式
+h1{
+    color: #369;
+    font: {
+        family: $font-family-sans-serif;
+        size: 250%
+    };
+}
+h2, h3{
+    color: #444;
+    font: {
+        family: $font-family-sans-serif;
+        weight: lighter;
+    }
+}
+body{
+    margin: 2em;
+}
+body, input[type="text"], button{
+    color: #333;
+    font-family: $font-family-serif;
+}
+* {
+    font-family: $font-family-sans-serif;
+}
+a{
+    cursor: pointer;
+}
+button{
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+    &:disabled{
+        background-color: #eee;
+        color: #aaa;
+        cursor: auto;
+    }
+}
+
+// 导航链接
+nav a{
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+    &:hover{
+        color: white;
+        background-color: #42545c;
+    }
+    &.active{
+        background-color: black;
+        color: white;
+    }
+}
+
+hr{
+    margin: 1.5rem 0;
+}
+input[type="text"]{
+    box-sizing: border-box;
+    width: 100%;
+    padding: .5rem;
+}
