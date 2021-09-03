@@ -1,18 +1,18 @@
 <!-- 英雄详情展示区域 -->
 <div *ngIf="hero">
     <!-- 使用管道来将英雄的名字显示成大写字母 -->
-    <h2>{{hero.name | uppercase}} Details</h2>
+    <h2 i18n>{{hero.name | uppercase}} Details</h2>
     <div>
-        <span>id:</span>
+        <span i18n>id:</span>
         {{hero.id}}
     </div>
     <div>
         <!-- for属性表示和哪个表单元素绑定 -->
-        <label for="hero-name">Hero name:</label>
+        <label for="hero-name" i18n>Hero name:</label>
         <!-- id名和label的for属性相同 -->
         <!-- 双向绑定，同时显示和修改name属性 -->
         <input id="hero-name" placeholder="name" [(ngModel)]="hero.name">
     </div>
-    <button (click)="goBack()">Go back</button>
-    <button (click)="save()">Save</button>
+    <button (click)="goBack()" i18n>Go back</button>
+    <button (click)="save()" i18n>Save</button>
 </div>

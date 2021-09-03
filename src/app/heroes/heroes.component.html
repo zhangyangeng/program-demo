@@ -1,9 +1,9 @@
 <!-- 英雄列表展示区域 -->
-<h2>My Heroes</h2>
+<h2 i18n>My Heroes</h2>
 <div>
-    <label for="new-hero">Hero name: </label>
+    <label for="new-hero" i18n>Hero name: </label>
     <input id="new-hero" #heroName>
-    <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+    <button class="add-button" (click)="add(heroName.value); heroName.value=''" i18n>
         Add hero
     </button>
 </div>
