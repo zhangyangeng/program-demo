@@ -19,10 +19,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "zh": "src/locale/messages.zh.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
+            "aot": true,
             "outputPath": "dist/angular-tour-of-heroes",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -39,6 +47,11 @@
             "scripts": []
           },
           "configurations": {
+            "zh": {
+              "localize": [
+                "zh"
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -79,6 +92,9 @@
             },
             "development": {
               "browserTarget": "angular-tour-of-heroes:build:development"
+            },
+            "zh": {
+              "browserTarget": "angular-tour-of-heroes:build:zh"
             }
           },
           "defaultConfiguration": "development"
