@@ -1,3 +1,12 @@
+# 更新日志
+
+**2021-09-06**：新增服务端渲染，使用 Express 框架进行服务端渲染
+- 克隆项目
+- 安装 npm 相关依赖
+- 使用 `npm run dev:ssr --configuration=zh` 命令进行运行
+- 修改 `dist/Angular-Tour-of-Heroes/browser/zh/index.html` 中的 `/zh/` 为 `./` 
+- 在浏览器中输入 `http://localhost:4200/zh/index.html` 即可正常运行
+
 # AngularTourOfHeroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
