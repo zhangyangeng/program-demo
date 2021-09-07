@@ -37,6 +37,17 @@
 修复：
 - 官方文档中遗漏代码
 
+## Angular-Tour-of-Heroes
+
+**Angular** 官方文档的 **教程** 中的 [英雄之旅](https://angular.cn/tutorial) 项目完整源码
+
+功能：
+- 英雄排名仪表盘
+- 英雄清单（添加、删除英雄）
+- 英雄详情（修改英雄）
+- 消息队列
+- 国际化（中文翻译）
+
 ## ts-snke
 
 **TypeScript** 的练习项目之贪吃蛇
