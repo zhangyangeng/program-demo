@@ -1,0 +1,18 @@
+<div class="full-screen page-content">
+    <div class="wrapper">
+        <img src="./assets/img/logo.png" alt="" class="log-img">
+        <div class="text-wrapper">
+            <h1 class="title-text">
+                Today
+            </h1>
+        </div>
+        <input nz-input placeholder="请输入用户名" #usernameInput [(ngModel)]="username"/>
+        <!-- 通过判断输入框是否有值来禁用开始按钮 -->
+        <button nz-button [nzType]="'primary'" (click)="completeSetup()" [disabled]="!usernameInput.value">
+            进入系统
+        </button>
+        <div class="copy-right">
+            Copyright © 2021 Wrysmile
+        </div>
+    </div>
+</div>
