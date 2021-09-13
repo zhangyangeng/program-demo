@@ -1,8 +1,11 @@
-// 清除默认样式
-*{
-    margin: 0;
+.full-screen{
+    position: fixed;
+    top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 // 引入ng-zorro样式库
 @import "~ng-zorro-antd/ng-zorro-antd.min.css";
+

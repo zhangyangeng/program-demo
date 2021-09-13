@@ -1,0 +1,31 @@
+<!-- 头部区域 -->
+<div class="header-wrapper">
+    <!-- 头像区域 -->
+    <!-- <img src="./assets/img/default-avatar.png"> -->
+    <nz-avatar [nzSize]="40" nzIcon="user" nzSrc="./assets/img/default-avatar.png"></nz-avatar>
+    <!-- 用户名区域 -->
+    <span class="username-text" *ngIf="!isCollapsed">
+        {{username}}
+    </span>
+    <!-- 设置区域 -->
+    <div class="floating-btn header-btn" *ngIf="!isCollapsed">
+        <i nz-icon nzType="setting" nzTheme="outline"></i>
+    </div>
+    <!-- 日历区域 -->
+    <div class="floating-btn header-btn" *ngIf="!isCollapsed">
+        <i nz-icon nzType="calendar" nzTheme="outline"></i>
+    </div>
+</div>
+
+<!-- 清单区域 -->
+<div class="list-wrapper">
+    <!-- 各个清单区域 -->
+    <app-list [isCollapsed]="isCollapsed"></app-list>
+    <!-- 新列表按钮区域 -->
+    <div class="add-list-btn-wrapper">
+        <button nz-button nzType="dashed" nzGhost (click)="openAddListModal()">
+            <i nz-icon nzType="plus" nzTheme="outline"></i>
+            <span *ngIf="!isCollapsed">新列表</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+@import '../../../../config/style.config.scss';
+
+// 头部区域
+.header-wrapper{
+    width: 100%;
+    height: 66px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    nz-avatar{
+        margin: 0 8px;
+    }
+    .username-text{
+        color: white;
+        width: 96px;
+        font-family: $font-family;
+    }
+    .header-btn{
+        color: white;
+    }
+    .floating-btn{
+        width: 42px;
+        height: 42px;
+        padding: 12px;
+        i{
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+}
+
+// 清单区域
+.list-wrapper{
+    text-align: center;
+    width: 100%;
+    height: 32px;
+    margin-top: 8px;
+}

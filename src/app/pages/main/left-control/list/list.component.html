@@ -1,0 +1,117 @@
+<!-- 列表区域，包含固定的 Today、Todo 以及 不固定的用户自定义列表 -->
+<ul nz-menu
+    [nzTheme]="'dark'" 
+    [nzMode]="'inline'" 
+    [nzInlineCollapsed]="isCollapsed">
+    <li nz-menu-item 
+        [nzSelected]="currentListUuid === 'today'"
+        (click)="click('today')">
+        <span>
+            <i nz-icon nzType="home" nzTheme="outline"></i>
+            <span class="nav-text">Today</span>
+        </span>
+    </li>
+    <li nz-menu-item
+        [nzSelected]="currentListUuid === 'todo'"
+        (click)="click('todo')">
+        <span>
+            <i nz-icon nzType="calendar" nzTheme="outline"></i>
+            <span class="nav-text">Todo</span>
+        </span>
+    </li>
+    <li nz-menu-item
+        *ngFor="let list of lists"
+        [nzSelected]="currentListUuid === list._id"
+        (click)="click(list._id)"
+        (contextmenu)="contextMenu($event, menu, list._id)">
+        <span>
+            <i nz-icon nzType="calendar" nzTheme="outline"></i>
+            <span class="nav-text">{{list.title}}</span>
+        </span>
+    </li>
+</ul>
+
+<!-- 自定义列表的右键菜单 -->
+<nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu 
+        nzInDropDown 
+        nzSelectable
+        >
+        <li nz-menu-item
+            (click)="openRenameListModal()">
+            <i nz-icon nzType="edit" nzTheme="outline"></i>
+            <span>修改列表</span>
+        </li>
+        <li nz-menu-divider></li>
+        <li nz-menu-item
+            nzDanger="true"
+            (click)="delete()">
+            <i nz-icon nzType="delete" nzTheme="outline"></i>
+            <span>删除列表</span>
+        </li>
+    </ul>
+</nz-dropdown-menu>
+
+<!-- 自定义列表的右键菜单 -->
+<!-- <ng-template #contextTemplate>
+    <ul nz-menu nzInDropDown nzSelectable>
+        <li nz-menu-item>
+            <i nz-icon nzType="edit" nzTheme="outline"></i>
+            <span>修改列表</span>
+        </li>
+        <li nz-menu-divider></li>
+        <li nz-menu-item nzDanger="true">
+            <i nz-icon nzType="delete" nzTheme="outline"></i>
+            <span>删除列表</span>
+        </li>
+    </ul>
+</ng-template> -->
+
+<!-- 添加新列表的模态对话框 -->
+<nz-modal [(nzVisible)]="addListModalVisible"
+          [nzTitle]="'添加新列表'"
+          [nzWidth]="420"
+          [nzOkText]="'添加'"
+          [nzCancelText]="'取消'"
+          [nzMaskClosable]="true"
+          (nzOnCancel)="closeAddListModal()"
+          (nzOnOk)="add(value)"
+          >
+        <form nz-form  *nzModalContent>
+            <nz-form-item>
+              <nz-form-control>
+                <input nz-input
+                       #listInput
+                       id="listInput"
+                       placeholder="列表名称"
+                       name="listTitle"
+                       [(ngModel)]="value"
+                       (keydown.enter)="add(value)">
+              </nz-form-control>
+            </nz-form-item>
+        </form>
+</nz-modal>
+
+<!-- 修改列表的模态对话框 -->
+<nz-modal [(nzVisible)]="renameListModalVisible"
+          [nzTitle]="'修改列表'"
+          [nzWidth]="420"
+          [nzOkText]="'修改'"
+          [nzCancelText]="'取消'"
+          [nzMaskClosable]="true"
+          (nzOnCancel)="closeRenameListModal()"
+          (nzOnOk)="rename(renameValue)"
+          >
+        <form nz-form  *nzModalContent>
+            <nz-form-item>
+              <nz-form-control>
+                <input nz-input
+                       #listRenameInput
+                       placeholder="列表名称"
+                       name="listTitle"
+                       [(ngModel)]="renameValue"
+                       (keydown.enter)="add(renameValue)">
+              </nz-form-control>
+            </nz-form-item>
+        </form>
+</nz-modal>

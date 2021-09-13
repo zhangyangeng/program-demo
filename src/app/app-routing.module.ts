@@ -8,8 +8,13 @@ const routes: Routes = [
     component: SetupComponent
   },
   {
+    path: 'main',
+    redirectTo: '/main',
+    pathMatch: 'full'
+  },
+  {
     path: '',
-    redirectTo: '/setup',
+    redirectTo: '/main',
     pathMatch: 'full'
   }
 ];
