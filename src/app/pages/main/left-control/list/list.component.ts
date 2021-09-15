@@ -37,7 +37,6 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    document.getElementById('listInput')?.focus();
     this.listService.lists$
       .pipe(takeUntil(this.destroy$))
       .subscribe(lists => {
@@ -49,7 +48,7 @@ export class ListComponent implements OnInit {
       .subscribe(uuid => {
         this.currentListUuid = uuid;
       })
-    
+    // 获取当前所有列表
     this.listService.getAll();
   }
 
@@ -60,13 +59,12 @@ export class ListComponent implements OnInit {
   // 打开新列表的模态框
   openAddListModal(): void{
     this.addListModalVisible = true;
-    
   }
-
+  // 关闭新列表的模态框
   closeAddListModal(): void{
     this.addListModalVisible = false;
   }
-
+  // 打开重命名的模态框
   openRenameListModal(): void {
     this.renameListModalVisible = true;
     setTimeout(() => {
@@ -75,31 +73,31 @@ export class ListComponent implements OnInit {
       this.renameValue = title!;
     });
   }
-
+  // 关闭重命名的模态框
   closeRenameListModal(): void{
     this.renameListModalVisible = false;
   }
-
+  // 添加列表
   add(title: string): void{
     this.listService.add(title);
     console.log(title);
     this.closeAddListModal();
   }
-
+  // 点击用户自定义列表触发
   click(uuid: string): void{
     this.listService.setCurrentUuid(uuid);
   }
-
+  // 重命名列表
   rename(title: string): void {
     this.listService.rename(this.contextListUuid, title);
     this.closeRenameListModal();
   }
-
+  // 用户自定义列表的右键菜单
   contextMenu($event: MouseEvent, template: NzDropdownMenuComponent, uuid: string): void{
     this.dropdown = this.dropdownService.create($event, template)!;
     this.contextListUuid = uuid;
   }
-
+  // 删除列表
   delete(): void {
     const uuid = this.contextListUuid;
     this.modal.confirm({

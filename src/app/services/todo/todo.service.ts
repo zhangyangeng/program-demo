@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Todo } from 'src/domain/entities';
+import { RankBy } from 'src/domain/type';
 import { floorToMinute, getCurrentTime, ONE_HOUR } from 'src/utils/time';
 import { ListService } from '../list/list.service';
 import { TODOS } from '../local-storage/local-storage.namespace';
@@ -12,7 +13,10 @@ import { LocalStorageService } from '../local-storage/local-storage.service';
 export class TodoService {
 
   todo$ = new Subject<Todo[]>();
+  rank$ = new Subject<RankBy>();
   private todos: Todo[] = [];
+  // 默认使用标题排序
+  private rank: RankBy = 'title';
 
   constructor(
     // 注入服务
@@ -24,6 +28,7 @@ export class TodoService {
 
   private broadCast(): void{
     this.todo$.next(this.todos);
+    this.rank$.next(this.rank);
   }
 
   private persist(): void{
@@ -58,6 +63,12 @@ export class TodoService {
       todo.completedAt = todo.completedFlag ? getCurrentTime() : undefined!;
       this.persist();
     }
+  }
+
+  // 转换排序规则
+  toggleRank(r: RankBy): void{
+    this.rank = r;
+    this.rank$.next(r);
   }
 
   moveToList(uuid: string, listUUID: string): void{

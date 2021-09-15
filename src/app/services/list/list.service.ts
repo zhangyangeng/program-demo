@@ -40,7 +40,7 @@ export class ListService {
 
   private update(list: List): void{
     const index = this.lists.findIndex(l => l._id === list._id);
-    if(index === -1){
+    if(index !== -1){
       this.lists.splice(index, 1, list);
       this.persist();
       this.boradCast();

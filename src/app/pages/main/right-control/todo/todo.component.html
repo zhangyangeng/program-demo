@@ -1,0 +1,75 @@
+<!-- 清单列表 -->
+<nz-list *ngIf="todos.length > 0" 
+         [nzDataSource]="todos" 
+         [nzRenderItem]="item" 
+         [nzItemLayout]="'horizontal'">
+    <ng-template #item let-item>
+        <nz-list-item class="todo-item" 
+                      (click)="click(item._id)"
+                      (contextmenu)="contextMenu($event, todoContextRef, item._id)">
+            <nz-list-item-meta [nzTitle]="nzTitle" 
+                               [nzDescription]="nzDescription">
+                <ng-template #nzTitle>
+                    <label nz-checkbox 
+                           [(ngModel)]="item.completedFlag"
+                           ngDefaultControl
+                           (click)="$event.stopPropagation()"
+                           (ngModelChange)="toggle(item._id)"></label>
+                    <span [class.strikethrough]="item.completedFlag">{{item.title}}</span>
+                </ng-template>
+                <ng-template #nzDescription>
+                    <span *ngIf="item.dueAt" class="todo-desc">
+                        <i nz-icon nzType="calendar" nzTheme="outline"></i>
+                        {{ item.dueAt | date }}
+                    </span>
+                    <span *ngIf="item.planAt" class="todo-desc">
+                        <i nz-icon nzType="clock-circle" nzTheme="outline"></i>
+                        {{ item.planAt | date }}
+                    </span>
+                    <span *ngIf="item.notifyMe" class="todo-desc">
+                        <i nz-icon nzType="bell" nzTheme="outline"></i>
+                    </span>
+                    <span *ngIf="item.desc">
+                        <i nz-icon nzType="edit" nzTheme="outline"></i>
+                    </span>
+                </ng-template>
+            </nz-list-item-meta>
+        </nz-list-item>
+    </ng-template>
+</nz-list>
+
+<nz-dropdown-menu #todoContextRef="nzDropdownMenu">
+    <ul nz-menu
+        nzInDropDown
+        (nzClick)="close()">
+      <li nz-menu-item
+          (click)="setToday()">
+        <i nz-icon nzType="home" nzTheme="outline"></i>
+        <span>设为今日</span>
+      </li>
+      <li nz-submenu>
+        <span title>
+          <i nz-icon nzType="bars" nzTheme="outline"></i>
+          移动到...
+        </span>
+        <ul *ngIf="currentContextTodo">
+          <li nz-menu-item
+              *ngIf="currentContextTodo?.listUUID !== 'todo'"
+              (click)="moveToList('todo')">
+            默认列表
+          </li>
+          <li nz-menu-item
+              *ngFor="let list of listsExcept(currentContextTodo.listUUID)"
+              (click)="moveToList(list._id)">
+            {{ list.title }}
+          </li>
+        </ul>
+      </li>
+      <li nz-menu-divider></li>
+      <li nz-menu-item
+          (click)="delete()" nzDanger>
+        <i nz-icon nzType="delete" nzTheme="outline"></i>
+        <span class="danger">删除</span>
+      </li>
+    </ul>
+  </nz-dropdown-menu>

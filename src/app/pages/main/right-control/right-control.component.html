@@ -1,0 +1,15 @@
+<!-- 右侧内容区域 -->
+<nz-layout class="right-control">
+    <!-- 头部区域 -->
+    <nz-header class="header-wrapper">
+        <app-header></app-header>
+    </nz-header>
+    <!-- 清单区域 -->
+    <nz-content class="list-wrapper">
+        <app-todo></app-todo>
+    </nz-content>
+    <!-- 按钮区域 -->
+    <div class="quick-add-wrapper">
+        <app-quick-add (add)="add($event)"></app-quick-add>
+    </div>
+</nz-layout>

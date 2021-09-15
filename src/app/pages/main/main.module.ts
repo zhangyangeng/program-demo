@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
 import { LeftControlComponent } from './left-control/left-control.component';
+import { RightControlComponent } from './right-control/right-control.component';
+import { HeaderComponent } from './right-control/header/header.component';
+import { QuickAddComponent } from './right-control/quick-add/quick-add.component';
+import { TodoComponent } from './right-control/todo/todo.component';
 import { FormsModule } from '@angular/forms';
 
 // 引入ng-zorro需要的模块
@@ -18,6 +22,10 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { SuggestComponent } from './right-control/header/suggest/suggest.component';
 
 
 // const icons: IconDefinition[] = [SettingOutline];
@@ -26,7 +34,12 @@ import { NzInputModule } from 'ng-zorro-antd/input';
   declarations: [
     MainComponent,
     LeftControlComponent,
-    ListComponent
+    ListComponent,
+    RightControlComponent,
+    HeaderComponent,
+    QuickAddComponent,
+    TodoComponent,
+    SuggestComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +53,10 @@ import { NzInputModule } from 'ng-zorro-antd/input';
     NzModalModule,
     NzDropDownModule,
     NzFormModule,
-    NzInputModule
+    NzInputModule,
+    NzListModule,
+    NzSpaceModule,
+    NzCheckboxModule
   ]
 })
 export class MainModule { }
