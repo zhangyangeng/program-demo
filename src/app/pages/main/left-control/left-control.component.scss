@@ -1,28 +1,28 @@
-@import '../../../../config/style.config.scss';
+@import "../../../../config/style.config.scss";
 
 // 头部区域
-.header-wrapper{
+.header-wrapper {
     width: 100%;
     height: 66px;
     padding: 12px;
     display: flex;
     align-items: center;
-    nz-avatar{
+    nz-avatar {
         margin: 0 8px;
     }
-    .username-text{
+    .username-text {
         color: white;
         width: 96px;
         font-family: $font-family;
     }
-    .header-btn{
+    .header-btn {
         color: white;
     }
-    .floating-btn{
+    .floating-btn {
         width: 42px;
         height: 42px;
         padding: 12px;
-        i{
+        i {
             width: 18px;
             height: 18px;
             font-size: 18px;
@@ -32,9 +32,15 @@
 }
 
 // 清单区域
-.list-wrapper{
-    text-align: center;
+.list-wrapper {
+    position: absolute;
+    top: 60px;
+    bottom: 48px;
     width: 100%;
-    height: 32px;
-    margin-top: 8px;
+    padding-bottom: 20px;
+
+    .add-list-btn-wrapper {
+        margin-top: 8px;
+        text-align: center;
+    }
 }

@@ -77,7 +77,6 @@ export class TodoComponent implements OnInit, OnDestroy {
   }
 
   click(uuid: string): void {
-    console.log("hhhhh")
     this.router.navigateByUrl(`/main/${uuid}`);
   }
 

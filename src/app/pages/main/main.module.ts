@@ -8,6 +8,8 @@ import { HeaderComponent } from './right-control/header/header.component';
 import { QuickAddComponent } from './right-control/quick-add/quick-add.component';
 import { TodoComponent } from './right-control/todo/todo.component';
 import { FormsModule } from '@angular/forms';
+import { SuggestComponent } from './right-control/header/suggest/suggest.component';
+import { DetailComponent } from './detail/detail.component';
 
 // 引入ng-zorro需要的模块
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -25,7 +27,13 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { SuggestComponent } from './right-control/header/suggest/suggest.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+
+// 服务
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 
 // const icons: IconDefinition[] = [SettingOutline];
@@ -39,7 +47,8 @@ import { SuggestComponent } from './right-control/header/suggest/suggest.compone
     HeaderComponent,
     QuickAddComponent,
     TodoComponent,
-    SuggestComponent
+    SuggestComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +65,14 @@ import { SuggestComponent } from './right-control/header/suggest/suggest.compone
     NzInputModule,
     NzListModule,
     NzSpaceModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzPopconfirmModule,
+    NzDividerModule,
+    NzDatePickerModule,
+    NzSwitchModule
+  ],
+  providers: [
+    NzMessageService
   ]
 })
 export class MainModule { }

@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SetupComponent } from './pages/setup/setup.component';
+import { InitGuardService } from './services/init-guard/init-guard.service';
 
 const routes: Routes = [
   {
     path: 'setup',
-    component: SetupComponent
+    component: SetupComponent,
+    // 引用路由守护策略
+    canActivate: [InitGuardService]
   },
   {
     path: 'main',
