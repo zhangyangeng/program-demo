@@ -69,4 +69,11 @@ export class SettingComponent implements OnInit {
       }
     }
   }
+
+  // 回车事件
+  enter(e: any){
+    if(e.code === 13 || e.code === 'Enter'){
+      this.changeName();
+    }
+  }
 }

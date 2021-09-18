@@ -9,7 +9,7 @@
         <app-todo></app-todo>
     </nz-content>
     <!-- 按钮区域 -->
-    <div class="quick-add-wrapper">
+    <div class="quick-add-wrapper" [class.center]="todoList && todoList.todos.length === 0">
         <app-quick-add (add)="add($event)"></app-quick-add>
     </div>
 </nz-layout>

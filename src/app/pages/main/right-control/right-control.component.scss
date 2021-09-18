@@ -20,6 +20,7 @@
       transform: translate3d(-50%, 0, 0);
       transition: 0.2s ease all;
   
+      // 若表单中没有内容，则将输入框移到中间
       &.center {
         bottom: 50%;
       }

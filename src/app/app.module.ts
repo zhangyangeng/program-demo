@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +43,9 @@ registerLocaleData(zh);
     SettingRoutingModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: zh_CN },
+    { provide: NZ_I18N, useValue: 'zh_CN' },
+    // 日期格式本地化
+    { provide: LOCALE_ID, useValue: 'zh_CN'},
     LocalStorageService,
     ListService,
     TodoService

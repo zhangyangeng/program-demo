@@ -9,7 +9,7 @@
             <nz-avatar nzIcon="user" nzSrc="./assets/img/default-avatar.png"></nz-avatar>
             <nz-divider nzText="用户名"></nz-divider>
             <nz-input-group nzSearch [nzAddOnAfter]="suffixButton">
-                <input type="text" nz-input [(ngModel)]="username" [disabled]="isDisabled">
+                <input type="text" nz-input [(ngModel)]="username" [disabled]="isDisabled" (keydown)="enter($event)">
             </nz-input-group>
             <ng-template #suffixButton>
                 <button nz-button nzType="primary" (click)="changeName()" nzSearch>{{isDisabled?"修改":"保存"}}</button>
