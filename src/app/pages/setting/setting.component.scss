@@ -1,0 +1,22 @@
+nz-header, nz-content {
+    background-color: white;
+}
+i{
+    cursor: pointer;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    &:hover{
+        color: #1890ff;
+    }
+}
+.container{
+    width: 300px;
+    margin: 150px auto;
+    text-align: center;
+    nz-avatar{
+        width: 60px;
+        height: 60px;
+    }
+}

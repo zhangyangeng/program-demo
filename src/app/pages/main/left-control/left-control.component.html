@@ -8,11 +8,11 @@
         {{username}}
     </span>
     <!-- 设置区域 -->
-    <div class="floating-btn header-btn" *ngIf="!isCollapsed">
+    <div class="floating-btn header-btn" *ngIf="!isCollapsed" (click)="goSetting()">
         <i nz-icon nzType="setting" nzTheme="outline"></i>
     </div>
     <!-- 日历区域 -->
-    <div class="floating-btn header-btn" *ngIf="!isCollapsed">
+    <div class="floating-btn header-btn" *ngIf="!isCollapsed" (click)="goSummary()">
         <i nz-icon nzType="calendar" nzTheme="outline"></i>
     </div>
 </div>

@@ -1,0 +1,20 @@
+<nz-layout class="full-screen">
+    <nz-header>
+        <div class="back">
+            <i nz-icon nzType="rollback" nzTheme="outline" (click)="goBack()"></i>
+        </div>
+    </nz-header>
+    <nz-content>
+        <div class="container">
+            <nz-avatar nzIcon="user" nzSrc="./assets/img/default-avatar.png"></nz-avatar>
+            <nz-divider nzText="用户名"></nz-divider>
+            <nz-input-group nzSearch [nzAddOnAfter]="suffixButton">
+                <input type="text" nz-input [(ngModel)]="username" [disabled]="isDisabled">
+            </nz-input-group>
+            <ng-template #suffixButton>
+                <button nz-button nzType="primary" (click)="changeName()" nzSearch>{{isDisabled?"修改":"保存"}}</button>
+            </ng-template>
+            <nz-divider nzText="设&nbsp;&nbsp;&nbsp;&nbsp;置"></nz-divider>
+        </div>
+    </nz-content>
+</nz-layout>

@@ -38,3 +38,21 @@ export class List{
         this.title = title;
     }
 }
+
+// 声明Summary类
+export class Summary{
+    _id!: string;
+    date!: number;
+    completedTodos!: string[];
+    cCount = 0;
+    uncompletedTodos!: string[];
+    uCount = 0;
+
+    constructor(date: number, cItems: string[], uItems: string[]){
+        this.date = date;
+        this.completedTodos = cItems;
+        this.uncompletedTodos = uItems;
+        this.cCount = this.completedTodos.length;
+        this.uCount = this.uncompletedTodos.length;
+    }
+}

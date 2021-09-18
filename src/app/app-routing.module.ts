@@ -11,6 +11,21 @@ const routes: Routes = [
     canActivate: [InitGuardService]
   },
   {
+    path: 'summary',
+    redirectTo: '/summary',
+    pathMatch: 'full'
+  },
+  {
+    path: 'setting',
+    redirectTo: '/setting',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    redirectTo: '/setting',
+    pathMatch: 'full'
+  },
+  {
     path: 'main',
     redirectTo: '/main',
     pathMatch: 'full'

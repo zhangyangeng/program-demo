@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { InitGuardService } from "src/app/services/init-guard/init-guard.service";
+import { SummaryComponent } from "../summary/summary.component";
 import { DetailComponent } from "./detail/detail.component";
 import { MainComponent } from "./main.component";
 
